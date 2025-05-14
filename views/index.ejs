@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Expenses</title></head>
+<body>
+  <h1>Expense Tracker</h1>
+  <form method="POST" action="/add">
+    <input name="title" placeholder="Title" required>
+    <input name="amount" placeholder="Amount" required>
+    <input name="category" placeholder="Category" required>
+    <input type="date" name="date" required>
+    <button type="submit">Add Expense</button>
+  </form>
+  <ul>
+    <% expenses.forEach(exp => { %>
+      <li><%= exp.title %> - $<%= exp.amount %> on <%= exp.date %> (<%= exp.category %>)</li>
+    <% }) %>
+  </ul>
+</body>
+</html>
